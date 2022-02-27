@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Nhập vào 3 số nguyên:</h3>
+<h3>Số thứ nhất:</h3>
+<input id="a" type="text">
+<h3>Số thứ hai:</h3>
+<input id="b" type="text">
+<h3>Số thứ ba:</h3>
+<input id="c" type="text">
+
+<h3><button onclick="check()">Kiểm tra</button></h3>
+<h3 id="result"></h3>
+
+<script>
+
+    function check() {
+        let a = parseInt(document.getElementById("a").value);
+        let b = parseInt(document.getElementById("b").value);
+        let c = parseInt(document.getElementById("c").value);
+        let highestNum = 0;
+
+        if (a > b) {
+            if (a > c) {
+                highestNum = a;
+            } else {
+                highestNum = c;
+            }
+        } else if (b > c) {
+            highestNum = b;
+        } else {
+            highestNum = c;
+        }
+
+        document.getElementById("result").innerHTML = "Số lớn nhất là " + highestNum;
+    }
+
+</script>
+</body>
+</html>

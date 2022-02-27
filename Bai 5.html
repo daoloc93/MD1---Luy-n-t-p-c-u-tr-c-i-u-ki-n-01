@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Nhập vào điểm các bài kiểm tra:</h3>
+<h3>Giữa kỳ:</h3>
+<input id="giuaKy" type="text">
+<h3>Cuối kỳ:</h3>
+<input id="cuoiKy" type="text">
+<br><br>
+<button onclick="check()">Kết quả</button>
+<h3 id="result"></h3>
+<script>
+
+    function check() {
+        let giuaKy = parseFloat(document.getElementById("giuaKy").value);
+        let cuoiKy = parseFloat(document.getElementById("cuoiKy").value);
+        let diemTB = (giuaKy + cuoiKy) / 2;
+        let hocLuc = "";
+
+        if (diemTB >= 8) {
+            hocLuc = "Giỏi"
+        } else if (diemTB >= 6.5) {
+            hocLuc = "Khá"
+        } else if (diemTB >= 5) {
+            hocLuc = "Trung bình"
+        } else if (diemTB >= 3.5) {
+            hocLuc = "Yếu"
+        } else {
+            hocLuc = "Kém"
+        }
+
+        document.getElementById("result").innerHTML = "Học lực: " + hocLuc;
+    }
+
+
+</script>
+<h3></h3>
+</body>
+</html>

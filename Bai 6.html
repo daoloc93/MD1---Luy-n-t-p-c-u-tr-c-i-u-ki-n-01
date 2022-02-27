@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Tính hoa hồng theo nấc bậc thang:</h2>
+<h3>Nhập vào hoá đơn của khách hàng:</h3>
+<input id="hoaDon" type="text">
+<button onclick="calculate()">Tính tiền hoa hồng</button>
+<h3 id="result"></h3>
+
+<script>
+
+    function calculate() {
+        let hoaDon = parseFloat(document.getElementById("hoaDon").value);
+        let hoaHong = 0;
+
+        if (hoaDon > 500000) {
+            hoaHong = (200000*0.02) + (300000*0.05) + (hoaDon-500000)*0.1;
+        } else if (hoaDon > 200000) {
+            hoaHong = (200000*0.02) + (hoaDon-200000)*0.05;
+        } else {
+            hoaHong = hoaDon*0.02;
+        }
+        document.getElementById("result").innerHTML = "Tiền hoa hồng bạn nhận được là: " + hoaHong;
+    }
+
+</script>
+</body>
+</html>

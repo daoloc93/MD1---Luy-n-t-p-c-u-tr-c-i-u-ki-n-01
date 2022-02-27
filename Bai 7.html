@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let soPhutGoi = parseInt(prompt("Nhập vào số phút gọi:"));
+    let phiBatBuoc = 2000;
+    let tienCuoc = 0;
+    if (soPhutGoi <= 50) {
+        tienCuoc = phiBatBuoc + soPhutGoi*600;
+    } else if (soPhutGoi <= 150) {
+        tienCuoc = phiBatBuoc + (50*600) + (soPhutGoi-50)*400;
+    } else {
+        tienCuoc = phiBatBuoc + (50*600) + (100*400) + (soPhutGoi-150)*200;
+    }
+
+    alert("Tiền cước điện thoại là: " + tienCuoc)
+
+</script>
+</body>
+</html>
